@@ -67,7 +67,7 @@ code {
 .description {
   font-size: 11;
   white-space: normal;
-  margin-top:10;
+  margin-top:5;
   height: 23;
 }
 @media (max-width: 768px) {
