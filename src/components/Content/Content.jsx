@@ -211,7 +211,7 @@ const Content = () => {
                                 </div>
                               ) : (
                                 <img
-                                  src="https://hamongkhang.github.io/CHATGPT_APP/imageschatgpt-icon-logo.png"
+                                  src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png"
                                   alt="Ảnh"
                                   style={{
                                     width: "42px",
