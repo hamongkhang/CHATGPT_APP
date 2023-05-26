@@ -57,6 +57,10 @@ const Menu = () => {
             <img
               src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png"
               alt="Ảnh"
+              style={{
+                width: "44px",
+                height: "44px",
+              }}
             />
             <Typography sx={{ marginLeft: 1, fontSize: "12px" }}>
               ChatGPT
