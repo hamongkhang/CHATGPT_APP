@@ -578,44 +578,46 @@ const Content = () => {
                             </IconButton>
                           )}
                           {showMenu && (
-                            <Box
-                              onClick={handleDelete}
-                              sx={{
-                                position: "fixed",
-                                width: "141px",
-                                height: "Hug (31px)",
-                                top: "-31px",
-                                borderRadius: "8px",
-                                backgroundColor: "rgba(55, 55, 55, 1)",
-                                zIndex: 2, // Đẩy lên trên dấu ba chấm
-                                display: "flex",
-                                alignItems: "center",
-                                transform: "translateY(-50%)",
-                              }}
-                            >
-                              <IconButton>
-                                <DeleteIcon
-                                  style={{
-                                    color: "rgba(218, 218, 218, 1)",
-                                    width: "13.75px",
-                                    height: "15px",
-                                  }}
-                                />
-                              </IconButton>
-                              <Typography
-                                fontFamily="Roboto"
-                                fontWeight={400}
-                                fontSize={14}
-                                lineHeight="23px"
-                                color="rgba(218, 218, 218, 1)"
+                            <div class="image-container">
+                              <Box
+                                onClick={handleDelete}
                                 sx={{
-                                  width: "Hug (40px)",
-                                  height: "Hug (23px)",
+                                  position: "fixed",
+                                  width: "141px",
+                                  height: "Hug (31px)",
+                                  top: "-31px",
+                                  borderRadius: "8px",
+                                  backgroundColor: "rgba(55, 55, 55, 1)",
+                                  zIndex: 2, // Đẩy lên trên dấu ba chấm
+                                  display: "flex",
+                                  alignItems: "center",
+                                  transform: "translateY(-50%)",
                                 }}
                               >
-                                Delete
-                              </Typography>
-                            </Box>
+                                <IconButton>
+                                  <DeleteIcon
+                                    style={{
+                                      color: "rgba(218, 218, 218, 1)",
+                                      width: "13.75px",
+                                      height: "15px",
+                                    }}
+                                  />
+                                </IconButton>
+                                <Typography
+                                  fontFamily="Roboto"
+                                  fontWeight={400}
+                                  fontSize={14}
+                                  lineHeight="23px"
+                                  color="rgba(218, 218, 218, 1)"
+                                  sx={{
+                                    width: "Hug (40px)",
+                                    height: "Hug (23px)",
+                                  }}
+                                >
+                                  Delete
+                                </Typography>
+                              </Box>
+                            </div>
                           )}
                         </div>
                       </div>
@@ -652,45 +654,47 @@ const Content = () => {
                           </IconButton>
                         )}
                         {showMenu && (
-                          <Box
-                            onClick={handleDelete}
-                            sx={{
-                              position: "fixed",
-                              width: "91px",
-                              height: "Hug (31px)",
-                              right: "0",
-                              bottom: "7vh",
-                              borderRadius: "8px",
-                              backgroundColor: "rgba(55, 55, 55, 1)",
-                              zIndex: 2,
-                              display: "flex",
-                              alignItems: "center",
-                              transform: "translateY(-50%)",
-                            }}
-                          >
-                            <IconButton>
-                              <DeleteIcon
-                                style={{
-                                  color: "rgba(218, 218, 218, 1)",
-                                  width: "13.75px",
-                                  height: "15px",
-                                }}
-                              />
-                            </IconButton>
-                            <Typography
-                              fontFamily="Roboto"
-                              fontWeight={400}
-                              fontSize={14}
-                              lineHeight="23px"
-                              color="rgba(218, 218, 218, 1)"
+                          <div class="image-container">
+                            <Box
+                              onClick={handleDelete}
                               sx={{
-                                width: "Hug (40px)",
-                                height: "Hug (23px)",
+                                position: "fixed",
+                                width: "91px",
+                                height: "Hug (31px)",
+                                right: "0",
+                                bottom: "7vh",
+                                borderRadius: "8px",
+                                backgroundColor: "rgba(55, 55, 55, 1)",
+                                zIndex: 2,
+                                display: "flex",
+                                alignItems: "center",
+                                transform: "translateY(-50%)",
                               }}
                             >
-                              Delete
-                            </Typography>
-                          </Box>
+                              <IconButton>
+                                <DeleteIcon
+                                  style={{
+                                    color: "rgba(218, 218, 218, 1)",
+                                    width: "13.75px",
+                                    height: "15px",
+                                  }}
+                                />
+                              </IconButton>
+                              <Typography
+                                fontFamily="Roboto"
+                                fontWeight={400}
+                                fontSize={14}
+                                lineHeight="23px"
+                                color="rgba(218, 218, 218, 1)"
+                                sx={{
+                                  width: "Hug (40px)",
+                                  height: "Hug (23px)",
+                                }}
+                              >
+                                Delete
+                              </Typography>
+                            </Box>
+                          </div>
                         )}
                       </div>
                       <Typography

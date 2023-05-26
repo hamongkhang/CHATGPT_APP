@@ -32,7 +32,13 @@ const Menu = () => {
               alignItems: "center",
             }}
           >
-            <img onClick={()=>window.location.reload()} src="https://hamongkhang.github.io/CHATGPT_APP/images/icon_main.png" alt="Ảnh" />
+            <div class="image-container">
+              <img
+                onClick={() => window.location.reload()}
+                src="https://hamongkhang.github.io/CHATGPT_APP/images/icon_main.png"
+                alt="Ảnh"
+              />
+            </div>
           </div>
         </Grid>
         <Grid item xs={4} sm={8} md={12} className="menu_item2">
@@ -48,7 +54,10 @@ const Menu = () => {
               alignItems: "center",
             }}
           >
-            <img src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png" alt="Ảnh" />
+            <img
+              src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png"
+              alt="Ảnh"
+            />
             <Typography sx={{ marginLeft: 1, fontSize: "12px" }}>
               ChatGPT
             </Typography>
