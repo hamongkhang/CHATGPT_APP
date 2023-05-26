@@ -527,7 +527,6 @@ const Content = () => {
                       className="descriptionmain"
                       sx={{
                         width: "100%",
-                        height: "10vh",
                         backgroundColor: "#181818",
                         display: "flex",
                         flexDirection: "column",

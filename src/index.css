@@ -68,7 +68,11 @@ code {
   font-size: 11;
   white-space: normal;
   margin-top:5;
+  max-width: 600px;
   height: 23;
+}
+.descriptionmain{
+  height:10vh;
 }
 @media (max-width: 768px) {
   .menu_item2 {
@@ -87,6 +91,9 @@ code {
   .input1 {
     display: none;
   }
+  .descriptionmain{
+    height:14vh;
+  }
   .input2 {
     display: flex;
   }
@@ -94,13 +101,13 @@ code {
     margin-top: 0px;
   }
   .component_1 {
-    height: 84vh;
+    height: 80vh;
   }
   .container_responsive {
     height: 0;
   }
   .chat-container {
-    height: 84vh;
+    height: 80vh;
   }
 }
 
