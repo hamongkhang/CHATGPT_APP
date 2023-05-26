@@ -32,7 +32,7 @@ const Menu = () => {
               alignItems: "center",
             }}
           >
-            <img src="\images\menu_icon.png" alt="Ảnh" />
+            <img src="https://hamongkhang.github.io/CHATGPT_APP/images/menu_icon.png" alt="Ảnh" />
             <Typography sx={{ marginLeft: 1, fontSize: "12px" }}>
               ARTIFICIAL
             </Typography>
@@ -51,7 +51,7 @@ const Menu = () => {
               alignItems: "center",
             }}
           >
-            <img src="\images\chatgpt-icon-logo.png" alt="Ảnh" />
+            <img src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png" alt="Ảnh" />
             <Typography sx={{ marginLeft: 1, fontSize: "12px" }}>
               ChatGPT
             </Typography>
