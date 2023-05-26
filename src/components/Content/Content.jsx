@@ -18,6 +18,24 @@ const Content = () => {
   const [isDropdown, setIsDropdown] = useState(false);
   const [isError, setIsError] = useState(false);
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleEnterPress();
+    }
+  };
+
+  const handleEnterPress = () => {
+    if (listMessage.length % 2 !== 0) {
+      return;
+    }
+    setMessage("");
+    setListMessage([...listMessage, message]);
+    setTimeout(async () => {
+      await sendMessage(message);
+      setLoading(false);
+    }, 1000);
+  };
+
   const handleDropdown = () => {
     setIsDropdown(!isDropdown);
   };
@@ -56,7 +74,7 @@ const Content = () => {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              "Bearer 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",
+              "Bearer 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",
           },
         }
       );
@@ -185,32 +203,15 @@ const Content = () => {
                               }}
                             >
                               {index % 2 === 0 ? (
-                                <div
+                                <img
+                                  src="images/you.png"
+                                  alt="Ảnh"
                                   style={{
                                     width: "44px",
                                     height: "44px",
-                                    left: "0px",
-                                    top: "0px",
-                                    background: "#3F5AC8",
-                                    borderRadius: "8px",
-                                    display: "flex",
-                                    justifyContent: "center",
-                                    alignItems: "center",
                                     marginRight: "16px",
-                                    flexShrink: 0,
                                   }}
-                                >
-                                  <Typography
-                                    width={28}
-                                    height={18}
-                                    fontFamily="Roboto"
-                                    fontWeight={500}
-                                    fontSize={16}
-                                    color="rgba(255, 255, 255, 1)"
-                                  >
-                                    You
-                                  </Typography>
-                                </div>
+                                />
                               ) : (
                                 <img
                                   src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png"
@@ -489,7 +490,7 @@ const Content = () => {
                         <Typography
                           width={191}
                           height={53}
-                          fontFamily="Inter"
+                          fontFamily="Roboto"
                           fontWeight={900}
                           fontSize={44}
                           sx={{
@@ -510,7 +511,7 @@ const Content = () => {
                         <Typography
                           width={97}
                           height={19}
-                          fontFamily="Inter"
+                          fontFamily="Roboto"
                           fontWeight={300}
                           fontSize={16}
                           color="rgba(143, 143, 143, 1)"
@@ -539,6 +540,7 @@ const Content = () => {
                         style={{ width: "100%", position: "relative" }}
                       >
                         <input
+                          onKeyDown={handleKeyPress}
                           onChange={(e) => changeMessage(e)}
                           value={message}
                           style={{
@@ -577,6 +579,7 @@ const Content = () => {
                           )}
                           {showMenu && (
                             <Box
+                              onClick={handleDelete}
                               sx={{
                                 position: "fixed",
                                 width: "141px",
@@ -590,7 +593,7 @@ const Content = () => {
                                 transform: "translateY(-50%)",
                               }}
                             >
-                              <IconButton onClick={handleDelete}>
+                              <IconButton>
                                 <DeleteIcon
                                   style={{
                                     color: "rgba(218, 218, 218, 1)",
@@ -621,6 +624,7 @@ const Content = () => {
                         style={{ width: "100%", alignItems: "center" }}
                       >
                         <input
+                          onKeyDown={handleKeyPress}
                           onChange={(e) => changeMessage(e)}
                           value={message}
                           style={{
@@ -649,6 +653,7 @@ const Content = () => {
                         )}
                         {showMenu && (
                           <Box
+                            onClick={handleDelete}
                             sx={{
                               position: "fixed",
                               width: "91px",
@@ -663,7 +668,7 @@ const Content = () => {
                               transform: "translateY(-50%)",
                             }}
                           >
-                            <IconButton onClick={handleDelete}>
+                            <IconButton>
                               <DeleteIcon
                                 style={{
                                   color: "rgba(218, 218, 218, 1)",
@@ -694,7 +699,7 @@ const Content = () => {
                         fontFamily="Roboto"
                         color="rgba(211, 211, 211, 1)"
                         style={{
-                          marginBottom: "13px",
+                          marginTop: 10,
                           textAlign: "center",
                         }}
                       >
