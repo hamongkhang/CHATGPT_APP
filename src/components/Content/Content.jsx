@@ -55,7 +55,7 @@ const Content = () => {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              "Bearer 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",
+              "Bearer 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",
           },
         }
       );
