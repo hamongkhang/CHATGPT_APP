@@ -25,8 +25,12 @@ const Content = () => {
   };
 
   const handleEnterPress = () => {
-    if (listMessage.length % 2 !== 0) {
-      return;
+    if (!isError) {
+      if (listMessage.length % 2 !== 0) {
+        return;
+      }
+    } else {
+      setIsError(false);
     }
     setMessage("");
     setListMessage([...listMessage, message]);
@@ -73,8 +77,7 @@ const Content = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization:
-              "Bearer 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",
+            Authorization: process.env.REACT_APP_SECRET_KEY,
           },
         }
       );
@@ -84,12 +87,12 @@ const Content = () => {
       setListMessage([...listMessage, message, newMessage]);
     } catch (error) {
       setIsError(true);
+      setListMessage([...listMessage, message, "ChatBox...."]);
       console.error("Error:", error);
     } finally {
       setIsLoading(false); // Đánh dấu kết thúc loading
     }
   };
-
   const handleMenuToggle = () => {
     setShowMenu(!showMenu);
   };
@@ -204,7 +207,7 @@ const Content = () => {
                             >
                               {index % 2 === 0 ? (
                                 <img
-                                  src="images/you.png"
+                                  src="https://hamongkhang.github.io/CHATGPT_APP/images/you.png"
                                   alt="Ảnh"
                                   style={{
                                     width: "44px",
@@ -314,65 +317,7 @@ const Content = () => {
                             </div>
                           </Box>
                         ) : null}
-                        {isError ? (
-                          <Box
-                            sx={{
-                              width: "100%",
-                              left: "460px",
-                              top: "33px",
-                              display: "flex",
-                              background: "#181818",
-                              borderRadius: "0px 0px 0px 0px",
-                              padding: "32px 32px 32px 32px",
-                            }}
-                          >
-                            <div
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                              }}
-                            >
-                              <img
-                                src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png"
-                                alt="Ảnh"
-                                style={{
-                                  width: "44px",
-                                  height: "44px",
-                                  marginRight: "16px",
-                                }}
-                              />
-                              <div
-                                style={{
-                                  width: "100%",
-                                  left: "0px",
-                                  top: "0px",
-                                  display: "flex",
-                                  justifyContent: "center",
-                                  alignItems: "center",
-                                  overflow: "hidden",
-                                  textOverflow: "ellipsis",
-                                  whiteSpace: "normal",
-                                }}
-                              >
-                                <Typography
-                                  width="100%"
-                                  fontFamily="Roboto"
-                                  fontWeight={400}
-                                  fontSize={14}
-                                  color="rgba(211, 211, 211, 1)"
-                                  style={{
-                                    whiteSpace: "normal",
-                                    wordWrap: "break-word",
-                                    hyphens: "auto",
-                                  }}
-                                >
-                                  ChatBox.....
-                                </Typography>
-                              </div>
-                            </div>
-                          </Box>
-                        ) : null}
-                        {listMessage.length % 2 === 0 ? (
+                        {listMessage.length % 2 === 0 && !isError ? (
                           <>
                             <Box
                               onClick={() => handleDropdown()}
