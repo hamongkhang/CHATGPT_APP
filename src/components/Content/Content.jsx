@@ -16,6 +16,7 @@ const Content = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [suggest, setSuggest] = useState();
   const [isDropdown, setIsDropdown] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const handleDropdown = () => {
     setIsDropdown(!isDropdown);
@@ -55,7 +56,7 @@ const Content = () => {
           headers: {
             "Content-Type": "application/json",
             Authorization:
-              "Bearer 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",
+              "Bearer sk-0n1suh3q3ilGxHjV4uYjT3BlbkFJuyzBBcfOC8bMBkTRB2a",
           },
         }
       );
@@ -64,6 +65,7 @@ const Content = () => {
       setSuggest(generateSuggestedQuestions(newMessage));
       setListMessage([...listMessage, message, newMessage]);
     } catch (error) {
+      setIsError(true);
       console.error("Error:", error);
     } finally {
       setIsLoading(false); // Đánh dấu kết thúc loading
@@ -105,10 +107,10 @@ const Content = () => {
 
   return (
     <Box
+      className="background1"
       sx={{
         width: "100%",
-        height: "100vh",
-        backgroundImage: `url(images/Group.png)`,
+        backgroundColor: "rgba(0, 0, 0, 1)",
         backgroundSize: "cover",
         backgroundBlendMode: "darken",
         backgroundRepeat: "no-repeat",
@@ -116,10 +118,10 @@ const Content = () => {
       }}
     >
       <Box
+        className="background2"
         sx={{
           width: "100%",
-          height: "100vh",
-          backgroundImage: `url(images/Group.png)`,
+          backgroundColor: "rgba(0, 0, 0, 1)",
           backgroundSize: "cover",
           backgroundBlendMode: "darken",
           backgroundRepeat: "no-repeat",
@@ -127,10 +129,10 @@ const Content = () => {
         }}
       >
         <Box
+          className="background3"
           sx={{
             width: "100%",
-            height: "100vh",
-            backgroundImage: `url(images/Group.png)`,
+            backgroundColor: "rgba(0, 0, 0, 1)",
             backgroundSize: "cover",
             backgroundBlendMode: "darken",
             backgroundRepeat: "no-repeat",
@@ -141,9 +143,9 @@ const Content = () => {
             <Grid item xs={4} sm={1} md={2}></Grid>
             <Grid item xs={4} sm={6} md={8}>
               <Box
+                className="container_responsive"
                 sx={{
                   width: "100%",
-                  height: "100vh",
                   backgroundColor: "#181818",
                 }}
               >
@@ -155,7 +157,6 @@ const Content = () => {
                         ref={chatContainerRef}
                         sx={{
                           width: "100%",
-                          height: "90vh",
                           backgroundColor: "#181818",
                           display: "flex",
                           flexDirection: "column",
@@ -195,7 +196,8 @@ const Content = () => {
                                     display: "flex",
                                     justifyContent: "center",
                                     alignItems: "center",
-                                    marginRight: "10px",
+                                    marginRight: "16px",
+                                    flexShrink: 0,
                                   }}
                                 >
                                   <Typography
@@ -214,9 +216,9 @@ const Content = () => {
                                   src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png"
                                   alt="Ảnh"
                                   style={{
-                                    width: "42px",
+                                    width: "44px",
                                     height: "44px",
-                                    marginRight: "10px",
+                                    marginRight: "16px",
                                   }}
                                 />
                               )}
@@ -267,14 +269,14 @@ const Content = () => {
                               style={{
                                 display: "flex",
                                 alignItems: "center",
-                                marginRight: "10px",
+                                marginRight: "16px",
                               }}
                             >
                               <img
                                 src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png"
                                 alt="Ảnh"
                                 style={{
-                                  width: "42px",
+                                  width: "44px",
                                   height: "44px",
                                 }}
                               />
@@ -308,6 +310,64 @@ const Content = () => {
                                   marginLeft: "4px",
                                 }}
                               ></div>
+                            </div>
+                          </Box>
+                        ) : null}
+                        {isError ? (
+                          <Box
+                            sx={{
+                              width: "100%",
+                              left: "460px",
+                              top: "33px",
+                              display: "flex",
+                              background: "#181818",
+                              borderRadius: "0px 0px 0px 0px",
+                              padding: "32px 32px 32px 32px",
+                            }}
+                          >
+                            <div
+                              style={{
+                                display: "flex",
+                                alignItems: "center",
+                              }}
+                            >
+                              <img
+                                src="https://hamongkhang.github.io/CHATGPT_APP/images/chatgpt-icon-logo.png"
+                                alt="Ảnh"
+                                style={{
+                                  width: "44px",
+                                  height: "44px",
+                                  marginRight: "16px",
+                                }}
+                              />
+                              <div
+                                style={{
+                                  width: "100%",
+                                  left: "0px",
+                                  top: "0px",
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                  whiteSpace: "normal",
+                                }}
+                              >
+                                <Typography
+                                  width="100%"
+                                  fontFamily="Roboto"
+                                  fontWeight={400}
+                                  fontSize={14}
+                                  color="rgba(211, 211, 211, 1)"
+                                  style={{
+                                    whiteSpace: "normal",
+                                    wordWrap: "break-word",
+                                    hyphens: "auto",
+                                  }}
+                                >
+                                  ChatBox.....
+                                </Typography>
+                              </div>
                             </div>
                           </Box>
                         ) : null}
@@ -416,9 +476,9 @@ const Content = () => {
                   <Grid item xs={4} sm={8} md={12}>
                     {listMessage.length ? null : (
                       <Box
+                        className="component_1"
                         sx={{
                           width: "100%",
-                          height: "90vh",
                           backgroundColor: "#181818",
                           display: "flex",
                           flexDirection: "column",
@@ -463,6 +523,7 @@ const Content = () => {
                       </Box>
                     )}
                     <Box
+                      className="descriptionmain"
                       sx={{
                         width: "100%",
                         height: "10vh",
@@ -485,7 +546,6 @@ const Content = () => {
                             width: "100%",
                             height: "40px",
                             borderRadius: "8px",
-                            marginBottom: "5px",
                             background: "#222222",
                             border: "1.5px solid #434343",
                             padding: "8px",
@@ -510,10 +570,11 @@ const Content = () => {
                               onClick={(e) => handleSendMessage(e)}
                               style={{ color: "#6D6D6D" }}
                             />
-                          ) : null}
-                          <IconButton onClick={handleMenuToggle}>
-                            <MoreHorizIcon style={{ color: "#6D6D6D" }} />
-                          </IconButton>
+                          ) : (
+                            <IconButton onClick={handleMenuToggle}>
+                              <MoreHorizIcon style={{ color: "#6D6D6D" }} />
+                            </IconButton>
+                          )}
                           {showMenu && (
                             <Box
                               sx={{
@@ -567,7 +628,6 @@ const Content = () => {
                             width: "100%",
                             height: "40px",
                             borderRadius: "8px",
-                            marginBottom: "5px",
                             background: "#222222",
                             border: "1.5px solid #434343",
                             padding: "8px",
@@ -580,12 +640,13 @@ const Content = () => {
                             onClick={(e) => handleSendMessage(e)}
                             style={{ marginLeft: "5px", color: "#6D6D6D" }}
                           />
-                        ) : null}
-                        <IconButton onClick={handleMenuToggle}>
-                          <MoreHorizIcon
-                            style={{ marginLeft: "5px", color: "#6D6D6D" }}
-                          />
-                        </IconButton>
+                        ) : (
+                          <IconButton onClick={handleMenuToggle}>
+                            <MoreHorizIcon
+                              style={{ marginLeft: "5px", color: "#6D6D6D" }}
+                            />
+                          </IconButton>
+                        )}
                         {showMenu && (
                           <Box
                             sx={{
@@ -629,15 +690,11 @@ const Content = () => {
                       </div>
                       <Typography
                         className="description"
-                        width={600}
-                        height={23}
+                        component="div"
                         fontFamily="Roboto"
-                        fontWeight={400}
-                        fontSize={12}
                         color="rgba(211, 211, 211, 1)"
                         style={{
-                          marginBottom: "10px",
-                          whiteSpace: "nowrap",
+                          marginBottom: "13px",
                           textAlign: "center",
                         }}
                       >

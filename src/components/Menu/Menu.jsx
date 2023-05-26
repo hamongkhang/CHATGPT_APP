@@ -32,10 +32,7 @@ const Menu = () => {
               alignItems: "center",
             }}
           >
-            <img src="https://hamongkhang.github.io/CHATGPT_APP/images/menu_icon.png" alt="Ảnh" />
-            <Typography sx={{ marginLeft: 1, fontSize: "12px" }}>
-              ARTIFICIAL
-            </Typography>
+            <img onClick={()=>window.location.reload()} src="https://hamongkhang.github.io/CHATGPT_APP/images/icon_main.png" alt="Ảnh" />
           </div>
         </Grid>
         <Grid item xs={4} sm={8} md={12} className="menu_item2">
