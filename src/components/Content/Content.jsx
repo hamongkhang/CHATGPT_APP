@@ -696,6 +696,7 @@ const Content = () => {
                       <Typography
                         className="description"
                         component="div"
+                        fontSize={12}
                         fontFamily="Roboto"
                         color="rgba(211, 211, 211, 1)"
                         style={{
