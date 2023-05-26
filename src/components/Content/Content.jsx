@@ -59,6 +59,7 @@ const Content = () => {
   };
 
   const sendMessage = async (message) => {
+    var apiKey = "fps4J0CkOPtBSKv8Xo3iT3BlbkFJoxrL3Ouc0kvMrfLHb4nF";
     if (isLoading) {
       return;
     }
@@ -77,7 +78,7 @@ const Content = () => {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: process.env.REACT_APP_SECRET_KEY,
+            Authorization: "Bearer sk-" + apiKey,
           },
         }
       );
