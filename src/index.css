@@ -1,4 +1,4 @@
-body {
+vhbody {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -74,6 +74,14 @@ code {
 .descriptionmain {
   height: 10vh;
 }
+.delete_button{
+  bottom: 90px,
+}
+@media (max-width: 320px) {
+  .delete_button{
+    bottom: 90px,
+  }
+}
 @media (max-width: 900px) {
   .menu_item2 {
     display: none;
@@ -128,6 +136,9 @@ code {
   }
   .chat-container {
     height: 76vh;
+  }
+  .delete_button{
+    bottom: 90px,
   }
 }
 

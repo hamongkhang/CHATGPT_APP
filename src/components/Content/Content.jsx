@@ -543,16 +543,17 @@ const Content = () => {
                     {showMenu && (
                       <div class="image-container">
                         <Box
+                        className="delete_button"
                           onClick={handleDelete}
                           sx={{
-                            position: "fixed",
+                            position: "absolute",
                             width: "91px",
                             height: "Hug (31px)",
-                            right: "0",
-                            bottom: "7vh",
+                            right: "20px",
                             borderRadius: "8px",
                             backgroundColor: "rgba(55, 55, 55, 1)",
                             zIndex: 2,
+                            bottom:"20px",
                             display: "flex",
                             alignItems: "center",
                             transform: "translateY(-50%)",
