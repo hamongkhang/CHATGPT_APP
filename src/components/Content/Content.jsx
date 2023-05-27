@@ -5,13 +5,12 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 
-const Content = () => {
+const Content = (props) => {
   const chatContainerRef = useRef(null);
   const [loading, setLoading] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [listMessage, setListMessage] = useState([]);
-  const [showMenu, setShowMenu] = useState(false);
   const [suggest, setSuggest] = useState();
   const [isDropdown, setIsDropdown] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -93,7 +92,7 @@ const Content = () => {
     }
   };
   const handleMenuToggle = () => {
-    setShowMenu(!showMenu);
+    props.setShowMenu(!props.showMenu);
   };
 
   const changeMessage = (e) => {
@@ -102,7 +101,7 @@ const Content = () => {
 
   const handleDelete = () => {
     setListMessage([]);
-    setShowMenu(!showMenu);
+    props.setShowMenu(!props.showMenu);
   };
 
   const handleSendMessage = async (e) => {
@@ -463,7 +462,7 @@ const Content = () => {
                           <MoreHorizIcon style={{ color: "#6D6D6D" }} />
                         </IconButton>
                       )}
-                      {showMenu && (
+                      {props.showMenu && (
                         <div class="image-container">
                           <Box
                             onClick={handleDelete}
@@ -540,7 +539,7 @@ const Content = () => {
                         />
                       </IconButton>
                     )}
-                    {showMenu && (
+                    {props.showMenu && (
                       <div class="image-container">
                         <Box
                         className="delete_button"
