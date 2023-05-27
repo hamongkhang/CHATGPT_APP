@@ -24,7 +24,7 @@ function ChatApp() {
       columns={{ xs: 4, sm: 8, md: 12 }}
       onClick={() => handleMainShowMenu()}
     >
-      <Grid item xs={4} sm={8} md={2}>
+      <Grid item xs={4} sm={8} md={2} sx={{width:"100px"}}>
         <Menu />
       </Grid>
       <Grid item xs={4} sm={8} md={10}>

@@ -465,6 +465,7 @@ const Content = (props) => {
                       {props.showMenu && (
                         <div class="image-container">
                           <Box
+                          className="deleteClick"
                             onClick={handleDelete}
                             sx={{
                               position: "fixed",
