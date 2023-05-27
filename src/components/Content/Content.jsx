@@ -3,8 +3,6 @@ import { Box, Grid, Typography, IconButton } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import DeleteIcon from "@mui/icons-material/Delete";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import axios from "axios";
 
 const Content = () => {
@@ -457,10 +455,9 @@ const Content = () => {
                       }}
                     >
                       {message ? (
-                        <SendIcon
-                          onClick={(e) => handleSendMessage(e)}
-                          style={{ color: "#6D6D6D" }}
-                        />
+                        <IconButton onClick={(e) => handleSendMessage(e)}>
+                          <SendIcon style={{ color: "#6D6D6D" }} />
+                        </IconButton>
                       ) : (
                         <IconButton onClick={handleMenuToggle}>
                           <MoreHorizIcon style={{ color: "#6D6D6D" }} />
@@ -531,10 +528,11 @@ const Content = () => {
                       }}
                     />
                     {message ? (
-                      <SendIcon
-                        onClick={(e) => handleSendMessage(e)}
-                        style={{ marginLeft: "5px", color: "#6D6D6D" }}
-                      />
+                      <IconButton onClick={(e) => handleSendMessage(e)}>
+                        <SendIcon
+                          style={{ marginLeft: "5px", color: "#6D6D6D" }}
+                        />
+                      </IconButton>
                     ) : (
                       <IconButton onClick={handleMenuToggle}>
                         <MoreHorizIcon

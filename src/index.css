@@ -29,7 +29,7 @@ code {
 
 /* Tùy chỉnh thanh cuộn */
 .chat-container::-webkit-scrollbar {
-  width: 8px;
+  width: 1px;
 }
 
 .chat-container::-webkit-scrollbar-track {
