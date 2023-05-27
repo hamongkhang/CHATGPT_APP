@@ -405,7 +405,7 @@ const Content = () => {
                     }}
                   >
                     <img
-                      src="https://hamongkhang.github.io/CHATGPT_APP/images/ChatGPT.png"
+                      src="https://hamongkhang.github.io/CHATGPT_APP/images/content.png"
                       alt="Ảnh"
                       style={{
                         marginRight: "16px",
