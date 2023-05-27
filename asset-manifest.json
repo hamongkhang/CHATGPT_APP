@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/CHATGPT_APP/static/css/main.800aa568.css",
-    "main.js": "/CHATGPT_APP/static/js/main.6e6a8bd5.js",
+    "main.css": "/CHATGPT_APP/static/css/main.1d0d16c7.css",
+    "main.js": "/CHATGPT_APP/static/js/main.69175118.js",
     "static/js/787.f81925e1.chunk.js": "/CHATGPT_APP/static/js/787.f81925e1.chunk.js",
     "index.html": "/CHATGPT_APP/index.html",
-    "main.800aa568.css.map": "/CHATGPT_APP/static/css/main.800aa568.css.map",
-    "main.6e6a8bd5.js.map": "/CHATGPT_APP/static/js/main.6e6a8bd5.js.map",
+    "main.1d0d16c7.css.map": "/CHATGPT_APP/static/css/main.1d0d16c7.css.map",
+    "main.69175118.js.map": "/CHATGPT_APP/static/js/main.69175118.js.map",
     "787.f81925e1.chunk.js.map": "/CHATGPT_APP/static/js/787.f81925e1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.800aa568.css",
-    "static/js/main.6e6a8bd5.js"
+    "static/css/main.1d0d16c7.css",
+    "static/js/main.69175118.js"
   ]
 }
