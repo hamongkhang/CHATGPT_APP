@@ -293,7 +293,7 @@ const Content = () => {
                         </div>
                       </Box>
                     ) : null}
-                    {listMessage.length % 2 === 0 && !isError ? (
+                    {/* {listMessage.length % 2 === 0 && !isError ? (
                       <>
                         <Box
                           onClick={() => handleDropdown()}
@@ -387,7 +387,7 @@ const Content = () => {
                             : null
                           : null}
                       </>
-                    ) : null}
+                    ) : null} */}
                   </Box>
                 ) : null}
               </Grid>
