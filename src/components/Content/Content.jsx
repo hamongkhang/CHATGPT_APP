@@ -411,20 +411,6 @@ const Content = () => {
                         marginRight: "16px",
                       }}
                     />
-
-                    <Typography
-                      width={97}
-                      height={19}
-                      fontFamily="Roboto"
-                      fontWeight={300}
-                      fontSize={16}
-                      color="rgba(143, 143, 143, 1)"
-                      style={{
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      Ask anything
-                    </Typography>
                   </Box>
                 )}
                 <Box
