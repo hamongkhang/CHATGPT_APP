@@ -67,12 +67,32 @@ code {
 .description {
   font-size: 11;
   white-space: normal;
-  margin-top:5;
+  margin-top: 5;
   max-width: 600px;
   height: 23;
 }
-.descriptionmain{
-  height:10vh;
+.descriptionmain {
+  height: 10vh;
+}
+@media (max-width: 900px) {
+  .menu_item2 {
+    display: none;
+  }
+  .menu_item1 {
+    height: 54;
+  }
+  .component_1 {
+    height: 76vh;
+  }
+  .container_responsive {
+    height: 0;
+  }
+  .chat-container {
+    height: 80vh;
+  }
+  .descriptionmain {
+    height: 14vh;
+  }
 }
 @media (max-width: 600px) {
   .menu_item2 {
@@ -91,8 +111,8 @@ code {
   .input1 {
     display: none;
   }
-  .descriptionmain{
-    height:14vh;
+  .descriptionmain {
+    height: 14vh;
   }
   .input2 {
     display: flex;
@@ -101,7 +121,7 @@ code {
     margin-top: 0px;
   }
   .component_1 {
-    height: 80vh;
+    height: 76vh;
   }
   .container_responsive {
     height: 0;

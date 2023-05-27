@@ -12,7 +12,7 @@ const Menu = () => {
         width: "100%",
         backgroundColor: "#161616",
         height: "100vh",
-        [theme.breakpoints.down("sm")]: {
+        [theme.breakpoints.down("md")]: {
           height: 50,
         },
         color: "white",
