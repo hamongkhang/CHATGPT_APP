@@ -126,6 +126,7 @@ const Content = (props) => {
   }, [listMessage]);
 
   const textareaRef = useRef(null);
+  const textareaRef2 = useRef(null);
 
   const handleChangeMessage = (event) => {
     setMessage(event.target.value);
@@ -134,15 +135,22 @@ const Content = (props) => {
   const initialTextareaHeight = 40;
   useEffect(() => {
     adjustTextareaHeight();
+    adjustTextareaHeight2();
   }, [message]);
   const [checkSize, setCheckSize] = useState(40);
-
+  const [checkSize2, setCheckSize2] = useState(40);
   useEffect(() => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop =
         chatContainerRef.current.scrollHeight;
     }
   }, [checkSize]);
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [checkSize2]);
   const adjustTextareaHeight = () => {
     const textarea = textareaRef.current;
     textarea.style.height = `${initialTextareaHeight}px`;
@@ -155,7 +163,18 @@ const Content = (props) => {
       textarea.style.overflowY = "hidden";
     }
   };
+  const adjustTextareaHeight2 = () => {
+    const textarea = textareaRef2.current;
+    textarea.style.height = `${initialTextareaHeight}px`;
+    textarea.style.height = `${textarea.scrollHeight}px`;
+    setCheckSize2(textarea.scrollHeight);
 
+    if (textarea.scrollHeight > initialTextareaHeight * 2.5) {
+      textarea.style.overflowY = "auto";
+    } else {
+      textarea.style.overflowY = "hidden";
+    }
+  };
   return (
     <Box
       className="background1"
@@ -576,7 +595,7 @@ const Content = (props) => {
                     <textarea
                       className="text-area"
                       onKeyDown={handleKeyPress}
-                      ref={textareaRef}
+                      ref={textareaRef2}
                       onChange={handleChangeMessage}
                       value={message}
                       style={{
