@@ -31,6 +31,9 @@ code {
 .chat-container::-webkit-scrollbar {
   width: 1px;
 }
+.text-area::-webkit-scrollbar {
+  width: 1px;
+}
 
 .chat-container::-webkit-scrollbar-track {
   background: #f1f1f1;

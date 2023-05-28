@@ -18,6 +18,7 @@ const Content = (props) => {
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       handleEnterPress();
+      event.preventDefault();
     }
   };
 
@@ -124,6 +125,37 @@ const Content = (props) => {
     }
   }, [listMessage]);
 
+  const textareaRef = useRef(null);
+
+  const handleChangeMessage = (event) => {
+    setMessage(event.target.value);
+  };
+
+  const initialTextareaHeight = 40;
+  useEffect(() => {
+    adjustTextareaHeight();
+  }, [message]);
+  const [checkSize, setCheckSize] = useState(40);
+
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [checkSize]);
+  const adjustTextareaHeight = () => {
+    const textarea = textareaRef.current;
+    textarea.style.height = `${initialTextareaHeight}px`;
+    textarea.style.height = `${textarea.scrollHeight}px`;
+    setCheckSize(textarea.scrollHeight);
+
+    if (textarea.scrollHeight > initialTextareaHeight * 2.5) {
+      textarea.style.overflowY = "auto";
+    } else {
+      textarea.style.overflowY = "hidden";
+    }
+  };
+
   return (
     <Box
       className="background1"
@@ -153,6 +185,14 @@ const Content = (props) => {
                     className="chat-container"
                     ref={chatContainerRef}
                     sx={{
+                      height:
+                        checkSize === 40
+                          ? null
+                          : checkSize === 64
+                          ? "82.5vh"
+                          : checkSize === 88
+                          ? "76.5vh"
+                          : "74vh",
                       width: "100%",
                       backgroundColor: "#181818",
                       display: "flex",
@@ -393,6 +433,14 @@ const Content = (props) => {
                   <Box
                     className="component_1"
                     sx={{
+                      height:
+                        checkSize === 40
+                          ? null
+                          : checkSize === 64
+                          ? "82.5vh"
+                          : checkSize === 88
+                          ? "76.5vh"
+                          : "74vh",
                       width: "100%",
                       backgroundColor: "#181818",
                       display: "flex",
@@ -413,6 +461,14 @@ const Content = (props) => {
                 <Box
                   className="descriptionmain"
                   sx={{
+                    height:
+                      checkSize === 40
+                        ? null
+                        : checkSize === 64
+                        ? "16.5vh"
+                        : checkSize === 88
+                        ? "23vh"
+                        : "26vh",
                     width: "100%",
                     backgroundColor: "#181818",
                     display: "flex",
@@ -425,20 +481,26 @@ const Content = (props) => {
                     className="input1"
                     style={{ width: "100%", position: "relative" }}
                   >
-                    <input
+                    <textarea
+                      className="text-area"
                       onKeyDown={handleKeyPress}
-                      onChange={(e) => changeMessage(e)}
+                      ref={textareaRef}
+                      onChange={handleChangeMessage}
                       value={message}
                       style={{
                         boxSizing: "border-box",
                         width: "100%",
-                        height: "40px",
+                        minHeight: `${initialTextareaHeight}px`,
+                        overflowX: "hidden",
+                        overflowY: "auto",
+                        maxHeight: `${initialTextareaHeight * 2.5}px`,
                         borderRadius: "8px",
                         background: "#222222",
                         border: "1.5px solid #434343",
                         padding: "8px",
-                        color: "#ffffff",
                         paddingRight: "60px",
+                        color: "#ffffff",
+                        resize: "none",
                       }}
                     />
                     <div
@@ -465,7 +527,7 @@ const Content = (props) => {
                       {props.showMenu && (
                         <div class="image-container">
                           <Box
-                          className="deleteClick"
+                            className="deleteClick"
                             onClick={handleDelete}
                             sx={{
                               position: "fixed",
@@ -511,19 +573,26 @@ const Content = (props) => {
                     className="input2"
                     style={{ width: "100%", alignItems: "center" }}
                   >
-                    <input
+                    <textarea
+                      className="text-area"
                       onKeyDown={handleKeyPress}
-                      onChange={(e) => changeMessage(e)}
+                      ref={textareaRef}
+                      onChange={handleChangeMessage}
                       value={message}
                       style={{
                         boxSizing: "border-box",
                         width: "100%",
-                        height: "40px",
+                        minHeight: `${initialTextareaHeight}px`,
+                        overflowX: "hidden",
+                        overflowY: "auto",
+                        maxHeight: `${initialTextareaHeight * 2.5}px`,
                         borderRadius: "8px",
                         background: "#222222",
                         border: "1.5px solid #434343",
                         padding: "8px",
+                        paddingRight: "60px",
                         color: "#ffffff",
+                        resize: "none",
                         marginLeft: "10px",
                       }}
                     />
@@ -543,7 +612,7 @@ const Content = (props) => {
                     {props.showMenu && (
                       <div class="image-container">
                         <Box
-                        className="delete_button"
+                          className="delete_button"
                           onClick={handleDelete}
                           sx={{
                             position: "absolute",
@@ -553,7 +622,7 @@ const Content = (props) => {
                             borderRadius: "8px",
                             backgroundColor: "rgba(55, 55, 55, 1)",
                             zIndex: 2,
-                            bottom:"20px",
+                            bottom: "20px",
                             display: "flex",
                             alignItems: "center",
                             transform: "translateY(-50%)",
