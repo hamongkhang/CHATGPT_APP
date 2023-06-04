@@ -151,6 +151,12 @@ const Content = (props) => {
         chatContainerRef.current.scrollHeight;
     }
   }, [checkSize2]);
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  });
   const adjustTextareaHeight = () => {
     const textarea = textareaRef.current;
     textarea.style.height = `${initialTextareaHeight}px`;
@@ -175,6 +181,7 @@ const Content = (props) => {
       textarea.style.overflowY = "hidden";
     }
   };
+
   return (
     <Box
       className="background1"
